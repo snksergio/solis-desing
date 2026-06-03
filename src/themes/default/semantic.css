@@ -1,0 +1,127 @@
+/* ==========================================================================
+   SEMANTIC TOKENS — Purpose-based. Used in code and by shadcn components.
+   References primitives only. Maps to shadcn variable names for compat.
+   ========================================================================== */
+
+:root {
+  /* ══════════════════════════════════════════════════════════════
+     SHADCN OVERRIDES — These variables are consumed by shadcn/ui
+     components directly (bg-primary, text-foreground, etc.)
+     Replacing defaults: primary was black → now brand green.
+     ══════════════════════════════════════════════════════════════ */
+
+  /* ── Page ── */
+  --background:           var(--neutral-0);
+  --foreground:           var(--neutral-950);
+
+  /* ── Card ── */
+  --card:                 var(--neutral-0);
+  --card-foreground:      var(--neutral-950);
+
+  /* ── Popover ── */
+  --popover:              var(--neutral-0);
+  --popover-foreground:   var(--neutral-950);
+
+  /* ── Primary (was black, now brand green) ── */
+  --primary:              var(--brand-600);
+  --primary-foreground:   var(--static-white);
+
+  /* ── Secondary ── */
+  --secondary:            var(--neutral-100);
+  --secondary-foreground: var(--neutral-700);
+
+  /* ── Muted ── */
+  --muted:                var(--neutral-100);
+  --muted-foreground:     var(--neutral-500);
+
+  /* ── Accent ── */
+  --accent:               var(--neutral-50);
+  --accent-foreground:    var(--neutral-950);
+
+  /* ── Destructive ── */
+  --destructive:          var(--critical-600);
+  --destructive-foreground: var(--static-white);
+
+  /* ── Border / Input / Ring ── */
+  --border:               var(--neutral-200);
+  --input:                var(--neutral-200);
+  --ring:                 var(--brand-500);
+
+  /* ── Radius (shadcn base) ── */
+  --radius:               var(--radius-base);
+
+  /* ── Sidebar (consuming sidebar-50..950 scale) ── */
+  --sidebar:                    var(--sidebar-50);          /* background */
+  --sidebar-foreground:         var(--sidebar-700);         /* text, placeholder, email */
+  --sidebar-primary:            oklch(0.500 0.120 155);     /* #228448 — active green */
+  --sidebar-primary-foreground: var(--static-white);
+  --sidebar-accent:             var(--brand-50);
+  --sidebar-accent-foreground:  var(--brand-700);
+  --sidebar-border:             var(--sidebar-200);         /* dividers */
+  --sidebar-ring:               var(--brand-500);
+
+  /* ── Sidebar extended (semantic aliases into the scale) ── */
+  --sidebar-muted:              var(--sidebar-600);         /* icons, mid-tone */
+  --sidebar-muted-subtle:       var(--sidebar-400);         /* arrows, captions */
+  --sidebar-search:             oklch(0.910 0.004 263 / 50%);  /* sidebar-200 at 50% */
+  --sidebar-user-bg:            oklch(0.910 0.004 263 / 50%);  /* sidebar-200 at 50% */
+  --sidebar-subitem-border:     var(--sidebar-200);         /* sub-item vertical line */
+
+  /* ── Charts ── */
+  --chart-1:              var(--brand-500);
+  --chart-2:              var(--info-500);
+  --chart-3:              var(--success-500);
+  --chart-4:              var(--warning-500);
+  --chart-5:              var(--critical-500);
+
+  /* ══════════════════════════════════════════════════════════════
+     EXTENDED SEMANTIC TOKENS — For custom components beyond shadcn.
+     Use these in project-specific components (KPIs, tags, etc.)
+     ══════════════════════════════════════════════════════════════ */
+
+  /* ── Backgrounds ── */
+  --color-bg-canvas:            var(--neutral-50);
+  --color-bg-default:           var(--neutral-0);
+  --color-bg-surface:           var(--neutral-0);
+  --color-bg-elevated:          var(--neutral-0);
+  --color-bg-muted:             var(--neutral-100);
+  --color-bg-subtle:            var(--neutral-50);
+  --color-bg-inverse:           var(--neutral-900);
+
+  --color-bg-primary:           var(--brand-600);
+  --color-bg-primary-hover:     var(--brand-700);
+  --color-bg-primary-subtle:    var(--brand-50);
+
+  --color-bg-secondary:         var(--neutral-100);
+  --color-bg-secondary-hover:   var(--neutral-200);
+
+  --color-bg-destructive:       var(--critical-600);
+  --color-bg-destructive-hover: var(--critical-700);
+  --color-bg-destructive-subtle: var(--critical-50);
+
+  --color-bg-success:           var(--success-600);
+  --color-bg-success-subtle:    var(--success-50);
+  --color-bg-warning:           var(--warning-600);
+  --color-bg-warning-subtle:    var(--warning-50);
+  --color-bg-critical:          var(--critical-600);
+  --color-bg-critical-subtle:   var(--critical-50);
+  --color-bg-info:              var(--info-600);
+  --color-bg-info-subtle:       var(--info-50);
+
+  /* ── Foregrounds ── */
+  --color-fg-default:           var(--neutral-950);
+  --color-fg-muted:             var(--neutral-500);
+  --color-fg-subtle:            var(--neutral-400);
+  --color-fg-on-emphasis:       var(--static-white);
+  --color-fg-primary:           var(--brand-600);
+  --color-fg-destructive:       var(--critical-600);
+  --color-fg-success:           var(--success-700);
+  --color-fg-warning:           var(--warning-700);
+  --color-fg-info:              var(--info-700);
+
+  /* ── Borders ── */
+  --color-border-default:       var(--neutral-200);
+  --color-border-muted:         var(--neutral-100);
+  --color-border-emphasis:      var(--neutral-400);
+  --color-border-primary:       var(--brand-600);
+}

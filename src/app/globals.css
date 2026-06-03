@@ -1,0 +1,225 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ── Theme layers: Primitive → Semantic → Dark ── */
+@import "../themes/default/primitives.css";
+@import "../themes/default/semantic.css";
+@import "../themes/default/dark.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ══════════════════════════════════════════════════════════════════════════
+   @theme inline — Bridges CSS variables → Tailwind utilities.
+   --color-primary → bg-primary, text-primary, border-primary, etc.
+   --color-brand-600 → bg-brand-600, text-brand-600, etc.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@theme inline {
+  /* ── Fonts ── */
+  --font-sans: var(--font-inter, "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif);
+  --font-mono: var(--font-geist-mono, ui-monospace, monospace);
+
+  /* ── Shadcn compat — consumed by all shadcn/ui components ── */
+  --color-background:              var(--background);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-destructive-foreground:  var(--destructive-foreground);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+
+  /* ── Sidebar scale (bg-sidebar-50, text-sidebar-700, etc.) ── */
+  --color-sidebar-50:  var(--sidebar-50);
+  --color-sidebar-100: var(--sidebar-100);
+  --color-sidebar-200: var(--sidebar-200);
+  --color-sidebar-300: var(--sidebar-300);
+  --color-sidebar-400: var(--sidebar-400);
+  --color-sidebar-500: var(--sidebar-500);
+  --color-sidebar-600: var(--sidebar-600);
+  --color-sidebar-700: var(--sidebar-700);
+  --color-sidebar-800: var(--sidebar-800);
+  --color-sidebar-900: var(--sidebar-900);
+  --color-sidebar-950: var(--sidebar-950);
+
+  /* ── Sidebar semantic ── */
+  --color-sidebar:                      var(--sidebar);
+  --color-sidebar-foreground:           var(--sidebar-foreground);
+  --color-sidebar-primary:              var(--sidebar-primary);
+  --color-sidebar-primary-foreground:   var(--sidebar-primary-foreground);
+  --color-sidebar-accent:               var(--sidebar-accent);
+  --color-sidebar-accent-foreground:    var(--sidebar-accent-foreground);
+  --color-sidebar-border:               var(--sidebar-border);
+  --color-sidebar-ring:                 var(--sidebar-ring);
+  --color-sidebar-muted:                var(--sidebar-muted);
+  --color-sidebar-muted-subtle:         var(--sidebar-muted-subtle);
+  --color-sidebar-search:               var(--sidebar-search);
+  --color-sidebar-user-bg:              var(--sidebar-user-bg);
+  --color-sidebar-subitem-border:       var(--sidebar-subitem-border);
+
+  /* ── Charts ── */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* ── Radius (from Figma: 10px standard) ── */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ── Primitive scales as Tailwind utilities ──
+     bg-brand-600, text-neutral-500, border-critical-200, etc. */
+  --color-brand-50:  var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+
+  --color-neutral-0:   var(--neutral-0);
+  --color-neutral-50:  var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+
+  --color-critical-50:  var(--critical-50);
+  --color-critical-100: var(--critical-100);
+  --color-critical-200: var(--critical-200);
+  --color-critical-300: var(--critical-300);
+  --color-critical-400: var(--critical-400);
+  --color-critical-500: var(--critical-500);
+  --color-critical-600: var(--critical-600);
+  --color-critical-700: var(--critical-700);
+  --color-critical-800: var(--critical-800);
+  --color-critical-900: var(--critical-900);
+  --color-critical-950: var(--critical-950);
+
+  --color-warning-50:  var(--warning-50);
+  --color-warning-100: var(--warning-100);
+  --color-warning-200: var(--warning-200);
+  --color-warning-300: var(--warning-300);
+  --color-warning-400: var(--warning-400);
+  --color-warning-500: var(--warning-500);
+  --color-warning-600: var(--warning-600);
+  --color-warning-700: var(--warning-700);
+  --color-warning-800: var(--warning-800);
+  --color-warning-900: var(--warning-900);
+  --color-warning-950: var(--warning-950);
+
+  --color-info-50:  var(--info-50);
+  --color-info-100: var(--info-100);
+  --color-info-200: var(--info-200);
+  --color-info-300: var(--info-300);
+  --color-info-400: var(--info-400);
+  --color-info-500: var(--info-500);
+  --color-info-600: var(--info-600);
+  --color-info-700: var(--info-700);
+  --color-info-800: var(--info-800);
+  --color-info-900: var(--info-900);
+  --color-info-950: var(--info-950);
+
+  --color-success-50:  var(--success-50);
+  --color-success-100: var(--success-100);
+  --color-success-200: var(--success-200);
+  --color-success-300: var(--success-300);
+  --color-success-400: var(--success-400);
+  --color-success-500: var(--success-500);
+  --color-success-600: var(--success-600);
+  --color-success-700: var(--success-700);
+  --color-success-800: var(--success-800);
+  --color-success-900: var(--success-900);
+  --color-success-950: var(--success-950);
+
+  /* ── Extended semantic as utilities ──
+     bg-bg-canvas, text-fg-muted, border-border-primary, etc. */
+  --color-bg-canvas:             var(--color-bg-canvas);
+  --color-bg-default:            var(--color-bg-default);
+  --color-bg-surface:            var(--color-bg-surface);
+  --color-bg-elevated:           var(--color-bg-elevated);
+  --color-bg-muted:              var(--color-bg-muted);
+  --color-bg-subtle:             var(--color-bg-subtle);
+  --color-bg-inverse:            var(--color-bg-inverse);
+  --color-bg-primary:            var(--color-bg-primary);
+  --color-bg-primary-hover:      var(--color-bg-primary-hover);
+  --color-bg-primary-subtle:     var(--color-bg-primary-subtle);
+  --color-bg-secondary:          var(--color-bg-secondary);
+  --color-bg-secondary-hover:    var(--color-bg-secondary-hover);
+  --color-bg-destructive:        var(--color-bg-destructive);
+  --color-bg-destructive-hover:  var(--color-bg-destructive-hover);
+  --color-bg-destructive-subtle: var(--color-bg-destructive-subtle);
+  --color-bg-success:            var(--color-bg-success);
+  --color-bg-success-subtle:     var(--color-bg-success-subtle);
+  --color-bg-warning:            var(--color-bg-warning);
+  --color-bg-warning-subtle:     var(--color-bg-warning-subtle);
+  --color-bg-critical:           var(--color-bg-critical);
+  --color-bg-critical-subtle:    var(--color-bg-critical-subtle);
+  --color-bg-info:               var(--color-bg-info);
+  --color-bg-info-subtle:        var(--color-bg-info-subtle);
+
+  --color-fg-default:      var(--color-fg-default);
+  --color-fg-muted:        var(--color-fg-muted);
+  --color-fg-subtle:       var(--color-fg-subtle);
+  --color-fg-on-emphasis:  var(--color-fg-on-emphasis);
+  --color-fg-primary:      var(--color-fg-primary);
+  --color-fg-destructive:  var(--color-fg-destructive);
+  --color-fg-success:      var(--color-fg-success);
+  --color-fg-warning:      var(--color-fg-warning);
+  --color-fg-info:         var(--color-fg-info);
+
+  --color-border-default:  var(--color-border-default);
+  --color-border-muted:    var(--color-border-muted);
+  --color-border-emphasis: var(--color-border-emphasis);
+  --color-border-primary:  var(--color-border-primary);
+}
+
+/* ── Base layer ── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans antialiased;
+  }
+}
+
+/* Sidebar text fade-in (delays appearance until width transition completes) */
+@keyframes sidebar-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@utility animate-sidebar-fade-in {
+  animation: sidebar-fade-in 150ms ease-in 150ms both;
+}

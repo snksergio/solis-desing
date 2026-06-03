@@ -1,0 +1,134 @@
+/* ==========================================================================
+   PRIMITIVE TOKENS — Raw OKLCH values. Never used directly in components.
+   Generated from visual analysis of Figma: IrZqyXNqnkcV4u0b0mkTPp
+
+   Source colors:
+   - Brand:    #00803c (primary buttons, sidebar active, links)
+   - Critical: #db4150 (destructive buttons, error states)
+   - Neutral:  #777c82 (cool gray, labels/muted text)
+   ========================================================================== */
+
+:root {
+  /* ── Brand (Primary Green) ──
+     Base: #00803c → oklch(0.484 0.148 160)
+     Hue 160 (green), constant across scale */
+  --brand-50:  oklch(0.97 0.025 160);
+  --brand-100: oklch(0.94 0.045 160);
+  --brand-200: oklch(0.88 0.080 160);
+  --brand-300: oklch(0.80 0.120 160);
+  --brand-400: oklch(0.70 0.155 160);
+  --brand-500: oklch(0.60 0.165 160);
+  --brand-600: oklch(0.48 0.148 160);   /* ← base #00803c */
+  --brand-700: oklch(0.42 0.130 160);
+  --brand-800: oklch(0.35 0.105 160);
+  --brand-900: oklch(0.28 0.080 160);
+  --brand-950: oklch(0.20 0.055 160);
+
+  /* ── Neutral (Cool Gray) ──
+     Slight cool tint from #777c82 → hue ~260, very low chroma.
+     Maps to: backgrounds, text, borders across the UI. */
+  --neutral-0:   oklch(1.000 0 0);
+  --neutral-50:  oklch(0.980 0.002 260);
+  --neutral-100: oklch(0.965 0.003 260);  /* ≈ #f6f6f6 */
+  --neutral-200: oklch(0.930 0.004 260);  /* ≈ #e8e8e8 */
+  --neutral-300: oklch(0.870 0.006 260);
+  --neutral-400: oklch(0.760 0.008 260);  /* ≈ #b2b2b2 */
+  --neutral-500: oklch(0.565 0.012 260);  /* ≈ #777c82 (labels) */
+  --neutral-600: oklch(0.480 0.014 260);
+  --neutral-700: oklch(0.400 0.016 260);  /* ≈ #4a4d55 (secondary text) */
+  --neutral-800: oklch(0.300 0.018 260);
+  --neutral-900: oklch(0.220 0.020 260);
+  --neutral-950: oklch(0.150 0.022 260);
+
+  /* ── Critical (Red) ──
+     Base: #db4150 → oklch(0.558 0.191 19)
+     Used for: destructive actions, error states, critical badges */
+  --critical-50:  oklch(0.970 0.015 19);  /* ≈ #fbe7e7 */
+  --critical-100: oklch(0.940 0.030 19);
+  --critical-200: oklch(0.880 0.065 19);
+  --critical-300: oklch(0.800 0.105 19);
+  --critical-400: oklch(0.700 0.155 19);
+  --critical-500: oklch(0.600 0.190 19);
+  --critical-600: oklch(0.558 0.191 19);  /* ← base #db4150 */
+  --critical-700: oklch(0.480 0.165 19);
+  --critical-800: oklch(0.400 0.130 19);
+  --critical-900: oklch(0.320 0.100 19);
+  --critical-950: oklch(0.220 0.060 19);
+
+  /* ── Warning (Amber) ──
+     Not explicitly in Figma — sensible defaults.
+     Used for: warning badges, pending states */
+  --warning-50:  oklch(0.980 0.020 85);
+  --warning-100: oklch(0.940 0.045 80);
+  --warning-200: oklch(0.900 0.080 75);
+  --warning-300: oklch(0.840 0.130 70);
+  --warning-400: oklch(0.800 0.155 65);
+  --warning-500: oklch(0.750 0.160 65);
+  --warning-600: oklch(0.670 0.170 55);
+  --warning-700: oklch(0.580 0.145 55);
+  --warning-800: oklch(0.480 0.110 55);
+  --warning-900: oklch(0.380 0.075 55);
+  --warning-950: oklch(0.280 0.050 55);
+
+  /* ── Info (Blue) ──
+     Not explicitly in Figma — sensible defaults.
+     Used for: informational badges, help links */
+  --info-50:  oklch(0.970 0.020 250);
+  --info-100: oklch(0.940 0.040 250);
+  --info-200: oklch(0.880 0.075 250);
+  --info-300: oklch(0.800 0.120 250);
+  --info-400: oklch(0.700 0.155 250);
+  --info-500: oklch(0.580 0.160 250);
+  --info-600: oklch(0.500 0.150 250);
+  --info-700: oklch(0.440 0.130 250);
+  --info-800: oklch(0.360 0.100 250);
+  --info-900: oklch(0.280 0.075 250);
+  --info-950: oklch(0.220 0.050 250);
+
+  /* ── Success (Emerald, hue 155 — differentiated from brand 160) ──
+     Used for: success badges, positive states */
+  --success-50:  oklch(0.970 0.025 155);
+  --success-100: oklch(0.940 0.045 155);
+  --success-200: oklch(0.880 0.080 155);
+  --success-300: oklch(0.800 0.120 155);
+  --success-400: oklch(0.700 0.155 155);
+  --success-500: oklch(0.600 0.165 155);
+  --success-600: oklch(0.500 0.150 155);
+  --success-700: oklch(0.440 0.130 155);
+  --success-800: oklch(0.360 0.105 155);
+  --success-900: oklch(0.280 0.080 155);
+  --success-950: oklch(0.200 0.055 155);
+
+  /* ── Sidebar (cool gray, hue 263, low chroma ~0.008) ──
+     Unified scale from Figma measurements. Original hues 253-277
+     normalized to 263 — visually identical at this chroma level.
+     Pattern matches brand-50..950, neutral-50..950, etc. */
+  --sidebar-50:  oklch(0.973 0.002 263);   /* sidebar background */
+  --sidebar-100: oklch(0.945 0.003 263);
+  --sidebar-200: oklch(0.910 0.004 263);   /* dividers, wash base */
+  --sidebar-300: oklch(0.850 0.005 263);
+  --sidebar-400: oklch(0.785 0.005 263);   /* arrows, captions, subtle */
+  --sidebar-500: oklch(0.680 0.008 263);
+  --sidebar-600: oklch(0.584 0.010 263);   /* icons, mid-tone */
+  --sidebar-700: oklch(0.468 0.008 263);   /* text, darker tone */
+  --sidebar-800: oklch(0.350 0.007 263);
+  --sidebar-900: oklch(0.250 0.006 263);
+  --sidebar-950: oklch(0.150 0.005 263);
+
+  /* ── Static ── */
+  --static-white: oklch(1 0 0);
+  --static-black: oklch(0 0 0);
+
+  /* ── Sizes (from Figma component measurements) ── */
+  --radius-base:  0.625rem;  /* 10px — buttons, inputs, cards, KPI icons */
+  --radius-sm:    0.375rem;  /* 6px  — tags, small elements */
+  --radius-md:    0.625rem;  /* 10px — standard */
+  --radius-lg:    0.75rem;   /* 12px — larger cards */
+  --radius-xl:    1.25rem;   /* 20px — dialogs */
+  --radius-full:  9999px;
+
+  --height-form-xs:  2rem;      /* 32px */
+  --height-form-sm:  2.5rem;    /* 40px — buttons (Figma) */
+  --height-form-md:  2.75rem;   /* 44px — inputs (Figma) */
+  --height-form-lg:  3rem;      /* 48px */
+}

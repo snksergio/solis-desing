@@ -1,0 +1,109 @@
+/* ==========================================================================
+   DARK MODE — Overrides shadcn + extended semantic tokens.
+   Applied via @custom-variant dark (&:where(.dark, .dark *))
+   ========================================================================== */
+
+.dark {
+  /* ── Shadcn Overrides ── */
+  --background:           var(--neutral-950);
+  --foreground:           var(--neutral-50);
+
+  --card:                 var(--neutral-900);
+  --card-foreground:      var(--neutral-50);
+
+  --popover:              var(--neutral-900);
+  --popover-foreground:   var(--neutral-50);
+
+  --primary:              var(--brand-500);
+  --primary-foreground:   var(--neutral-950);
+
+  --secondary:            var(--neutral-800);
+  --secondary-foreground: var(--neutral-50);
+
+  --muted:                var(--neutral-800);
+  --muted-foreground:     var(--neutral-400);
+
+  --accent:               var(--neutral-800);
+  --accent-foreground:    var(--neutral-50);
+
+  --destructive:          var(--critical-500);
+  --destructive-foreground: var(--neutral-950);
+
+  --border:               var(--neutral-800);
+  --input:                oklch(1 0 0 / 15%);
+  --ring:                 var(--brand-400);
+
+  /* Sidebar scale — dark mode (inverted lightness, same hue 263) */
+  --sidebar-50:  oklch(0.150 0.005 263);
+  --sidebar-100: oklch(0.200 0.006 263);
+  --sidebar-200: oklch(0.250 0.006 263);
+  --sidebar-300: oklch(0.320 0.007 263);
+  --sidebar-400: oklch(0.420 0.007 263);
+  --sidebar-500: oklch(0.520 0.008 263);
+  --sidebar-600: oklch(0.620 0.008 263);
+  --sidebar-700: oklch(0.740 0.006 263);
+  --sidebar-800: oklch(0.850 0.004 263);
+  --sidebar-900: oklch(0.930 0.003 263);
+  --sidebar-950: oklch(0.970 0.002 263);
+
+  --sidebar:              var(--sidebar-50);
+  --sidebar-foreground:   var(--sidebar-700);
+  --sidebar-primary:      oklch(0.600 0.140 155);
+  --sidebar-border:       var(--sidebar-200);
+  --sidebar-muted:        var(--sidebar-600);
+  --sidebar-muted-subtle: var(--sidebar-400);
+  --sidebar-search:       oklch(0.250 0.006 263 / 50%);
+  --sidebar-user-bg:      oklch(0.250 0.006 263 / 50%);
+  --sidebar-subitem-border: var(--sidebar-200);
+  --sidebar-primary:      var(--brand-500);
+  --sidebar-primary-foreground: var(--neutral-950);
+  --sidebar-accent:       var(--neutral-800);
+  --sidebar-accent-foreground: var(--neutral-50);
+  --sidebar-border:       oklch(1 0 0 / 10%);
+  --sidebar-ring:         var(--brand-400);
+
+  --chart-1:              var(--brand-400);
+  --chart-2:              var(--info-400);
+  --chart-3:              var(--success-400);
+  --chart-4:              var(--warning-400);
+  --chart-5:              var(--critical-400);
+
+  /* ── Extended Semantic ── */
+  --color-bg-canvas:            var(--neutral-950);
+  --color-bg-default:           var(--neutral-900);
+  --color-bg-surface:           var(--neutral-800);
+  --color-bg-elevated:          var(--neutral-800);
+  --color-bg-muted:             var(--neutral-800);
+  --color-bg-subtle:            var(--neutral-900);
+  --color-bg-inverse:           var(--neutral-50);
+
+  --color-bg-primary:           var(--brand-500);
+  --color-bg-primary-hover:     var(--brand-400);
+  --color-bg-primary-subtle:    var(--brand-950);
+
+  --color-bg-secondary:         var(--neutral-800);
+  --color-bg-secondary-hover:   var(--neutral-700);
+
+  --color-bg-destructive:       var(--critical-500);
+  --color-bg-destructive-hover: var(--critical-400);
+  --color-bg-destructive-subtle: var(--critical-950);
+
+  --color-bg-success-subtle:    var(--success-950);
+  --color-bg-warning-subtle:    var(--warning-950);
+  --color-bg-critical-subtle:   var(--critical-950);
+  --color-bg-info-subtle:       var(--info-950);
+
+  --color-fg-default:           var(--neutral-50);
+  --color-fg-muted:             var(--neutral-400);
+  --color-fg-subtle:            var(--neutral-500);
+  --color-fg-primary:           var(--brand-400);
+  --color-fg-destructive:       var(--critical-400);
+  --color-fg-success:           var(--success-400);
+  --color-fg-warning:           var(--warning-400);
+  --color-fg-info:              var(--info-400);
+
+  --color-border-default:       var(--neutral-700);
+  --color-border-muted:         var(--neutral-800);
+  --color-border-emphasis:      var(--neutral-500);
+  --color-border-primary:       var(--brand-500);
+}
